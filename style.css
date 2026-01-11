@@ -2,25 +2,27 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
   min-height: 100vh;
   background: #0f0f0f;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* Calculator container */
+/* FIXED SIZE CALCULATOR */
 .calculator {
-  width: 90%;
-  max-width: 360px;
+  width: 380px;
+  height: 520px;
   background: #1e1e1e;
   padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Title */
@@ -28,43 +30,44 @@ body {
   text-align: center;
   color: #f5c542;
   margin-bottom: 15px;
-  font-size: 1.4rem;
+  font-size: 22px;
 }
 
 /* Display */
 #display {
   width: 100%;
-  padding: 12px;
-  font-size: 1.6rem;
+  height: 60px;
+  font-size: 28px;
   text-align: right;
   border: none;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
   background: #ffffff;
   color: #000;
 }
 
 /* Buttons grid */
 .buttons {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 /* Buttons */
 button {
-  padding: 16px;
-  font-size: 1.1rem;
+  height: 55px;
+  font-size: 18px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 12px;
   background: #2b2b2b;
   color: #fff;
-  transition: 0.2s;
+  cursor: pointer;
 }
 
-button:hover {
-  background: #3a3a3a;
+button:active {
+  transform: scale(0.95);
 }
 
 /* Special buttons */
@@ -74,39 +77,11 @@ button:hover {
   font-weight: bold;
 }
 
-.equal:hover {
-  background: #e0b937;
-}
-
 .danger {
   background: #c0392b;
 }
 
-.danger:hover {
-  background: #a93226;
-}
-
-/* Zero button */
+/* Zero spans 2 columns */
 .zero {
   grid-column: span 2;
-}
-
-/* Mobile optimization */
-@media (max-width: 480px) {
-  .calculator {
-    padding: 18px;
-  }
-
-  button {
-    padding: 18px;
-    font-size: 1.2rem;
-  }
-
-  #display {
-    font-size: 1.8rem;
-  }
-
-  .calculator h1 {
-    font-size: 1.5rem;
-  }
 }
