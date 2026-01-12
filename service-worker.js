@@ -1,4 +1,4 @@
-const CACHE_NAME = "ameen-calculator-v1";
+const CACHE_NAME = "ameen-calculator-v2";
 const FILES_TO_CACHE = [
   "./",
   "./index.html",
